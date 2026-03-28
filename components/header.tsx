@@ -17,32 +17,26 @@ export function Header() {
   }, [])
 
   const navItems = [
-    { label: "Процедуры", href: "#services" },
-    { label: "Врачи", href: "#doctors" },
-    { label: "Клиника", href: "#clinic" },
-    { label: "Контакты", href: "#contact" },
+    { label: "Процедуры", href: "/#services" },
+    { label: "Врачи", href: "/#doctors" },
+    { label: "Клиника", href: "/#clinic" },
+    { label: "Контакты", href: "/#contact" },
   ]
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "glass border-b border-border/50 py-4"
-          : "bg-transparent py-6"
+        isScrolled ? "glass border-b border-border/50 py-4" : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
+        <a href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 transition-colors">
             <span className="text-primary font-serif text-lg">К</span>
           </div>
-          <span className="font-serif text-xl tracking-tight text-foreground hidden sm:block">
-            Косметология
-          </span>
+          <span className="font-serif text-xl tracking-tight text-foreground hidden sm:block">Косметология</span>
         </a>
 
-        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
             <a
@@ -56,14 +50,12 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA Button */}
         <div className="hidden lg:block">
           <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
-            <a href="#appointment">Записаться</a>
+            <a href="/#appointment">Записаться</a>
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="lg:hidden p-2 text-foreground"
@@ -73,7 +65,6 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 glass border-b border-border/50 animate-fade-in">
           <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
@@ -81,14 +72,16 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
+                className="text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-foreground py-2 border-b border-border/30 last:border-0"
               >
                 {item.label}
               </a>
             ))}
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
-              <a href="#appointment" onClick={() => setIsMobileMenuOpen(false)}>Записаться</a>
+              <a href="/#appointment" onClick={() => setIsMobileMenuOpen(false)}>
+                Записаться
+              </a>
             </Button>
           </nav>
         </div>
