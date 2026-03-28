@@ -58,12 +58,15 @@ export function FinalCTA() {
 
           {/* CTA Button */}
           <div className="reveal opacity-0" style={{ animationDelay: "0.3s" }}>
-            <Button 
+            <Button
+              asChild
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-10 py-6 text-lg gap-3 group shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
             >
-              Записаться на консультацию
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a href="#appointment">
+                Записаться на консультацию
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
 

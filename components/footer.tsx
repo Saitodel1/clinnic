@@ -1,6 +1,7 @@
 "use client"
 
-import { Instagram, Send, Phone, Mail, MapPin } from "lucide-react"
+import { Instagram, MessageCircle, Send, Phone, Mail, MapPin } from "lucide-react"
+import { clinicContact } from "@/lib/contact"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -41,6 +42,15 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a 
+                href={clinicContact.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </a>
+              <a 
                 href="#" 
                 className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
                 aria-label="Instagram"
@@ -48,7 +58,9 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href={clinicContact.telegramUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
                 aria-label="Telegram"
               >
@@ -98,25 +110,25 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-background/40 shrink-0 mt-0.5" />
                 <span className="text-sm text-background/60">
-                  г. Астана, пр. Республики, 42
+                  {clinicContact.address}
                 </span>
               </li>
               <li>
                 <a 
-                  href="tel:+77172123456" 
+                  href={`tel:${clinicContact.phoneLink}`}
                   className="flex items-center gap-3 text-sm text-background/60 hover:text-background transition-colors"
                 >
                   <Phone className="w-5 h-5 text-background/40" />
-                  +7 (7172) 123-45-67
+                  {clinicContact.phoneDisplay}
                 </a>
               </li>
               <li>
                 <a 
-                  href="mailto:info@cosmetology.kz" 
+                  href={`mailto:${clinicContact.email}`}
                   className="flex items-center gap-3 text-sm text-background/60 hover:text-background transition-colors"
                 >
                   <Mail className="w-5 h-5 text-background/40" />
-                  info@cosmetology.kz
+                  {clinicContact.email}
                 </a>
               </li>
             </ul>

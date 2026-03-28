@@ -58,10 +58,8 @@ export function Header() {
 
         {/* CTA Button */}
         <div className="hidden lg:block">
-          <Button 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
-          >
-            Записаться
+          <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
+            <a href="#appointment">Записаться</a>
           </Button>
         </div>
 
@@ -89,10 +87,8 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-            <Button 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4"
-            >
-              Записаться
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
+              <a href="#appointment" onClick={() => setIsMobileMenuOpen(false)}>Записаться</a>
             </Button>
           </nav>
         </div>

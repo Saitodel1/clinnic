@@ -61,11 +61,14 @@ export function HeroSection() {
 
             <div className="reveal opacity-0 flex flex-col sm:flex-row gap-4" style={{ animationDelay: "0.3s" }}>
               <Button 
+                asChild
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 gap-2 group"
               >
-                Записаться
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <a href="#appointment">
+                  Записаться
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
               <Button 
                 size="lg" 

@@ -7,6 +7,7 @@ import { ServicesSection } from "@/components/services-section"
 import { InteractiveSection } from "@/components/interactive-section"
 import { DoctorsSection } from "@/components/doctors-section"
 import { ClinicSection } from "@/components/clinic-section"
+import { AppointmentSection } from "@/components/appointment-section"
 import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
@@ -20,6 +21,7 @@ export default function Home() {
       <InteractiveSection />
       <DoctorsSection />
       <ClinicSection />
+      <AppointmentSection />
       <FinalCTA />
       <Footer />
     </main>

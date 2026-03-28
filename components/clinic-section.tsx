@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import { MapPin, Clock, Phone } from "lucide-react"
 import Image from "next/image"
+import { clinicContact } from "@/lib/contact"
 
 export function ClinicSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -82,7 +83,7 @@ export function ClinicSection() {
                 </div>
                 <div>
                   <div className="font-medium text-foreground mb-1">Астана</div>
-                  <div className="text-sm text-muted-foreground">Проспект Республики, 42</div>
+                  <div className="text-sm text-muted-foreground">{clinicContact.address.replace("г. Астана, ", "")}</div>
                 </div>
               </div>
             </div>
@@ -122,7 +123,7 @@ export function ClinicSection() {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Телефон</div>
-                  <div className="font-medium text-foreground">+7 (7172) 123-45-67</div>
+                  <div className="font-medium text-foreground">{clinicContact.phoneDisplay}</div>
                 </div>
               </div>
             </div>
